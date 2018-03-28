@@ -16,6 +16,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
 
 group = 'com.crud'
 version = '0.0.1-SNAPSHOT'
@@ -36,6 +37,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 
 
 	compile (group: 'org.springframework', name: 'spring-web', version: '5.0.4.RELEASE')
