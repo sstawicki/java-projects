@@ -41,6 +41,7 @@ dependencies {
     //Swager
     compile('io.springfox:springfox-swagger2:2.7.0')
     compile('io.springfox:springfox-swagger-ui:2.7.0')
+	compile('org.springframework.boot:spring-boot-starter-mail:2.0.1.RELEASE')
 
 	//providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 
