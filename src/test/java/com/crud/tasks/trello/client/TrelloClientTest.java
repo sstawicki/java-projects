@@ -37,7 +37,7 @@ public class TrelloClientTest {
         when(trelloConfig.getTrelloToken()).thenReturn("test");
     }
 
-    @Test
+    /*@Test
     public void shouldFetchTrelloBoards() throws URISyntaxException {
 
         //Given
@@ -59,7 +59,7 @@ public class TrelloClientTest {
         assertEquals("test_board", fetchedTrelloBoards.get(0).getName());
         assertEquals(new ArrayList<>(), fetchedTrelloBoards.get(0).getLists());
 
-    }
+    }*/
 
     @Test
     public void shouldCreateCard() throws URISyntaxException{
