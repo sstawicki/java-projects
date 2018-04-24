@@ -32,7 +32,7 @@ public class EmailScheduler {
                 "Currently in database you got: " + size + " " + getTasks(size)));
     }
 
-    static String getTasks(long size) {
+    private static String getTasks(long size) {
         if(size == 1)
             return "task";
         else
