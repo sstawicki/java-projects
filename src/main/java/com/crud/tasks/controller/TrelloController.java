@@ -22,6 +22,8 @@ public class TrelloController {
         public List<TrelloBoardDto> getTrelloBoards() {
 
             return trelloFacade.fetchTrelloBoards();
+
+
                     /*.stream()
                     .filter(trelloBoard -> trelloBoard.getName().contains("Kodilla"))
                     .collect(Collectors.toList());
