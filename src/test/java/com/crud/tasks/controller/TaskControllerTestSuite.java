@@ -113,7 +113,8 @@ public class TaskControllerTestSuite {
         //Given
         TaskDto taskDto = new TaskDto(1L, "test","content");
         TaskDto taskDtoUpdate = new TaskDto(1L, "test_update", "content_update");
-        when(taskMapper.mapToTaskDto(any(Task.class))).thenReturn(taskDtoUpdate);
+        when(taskMapper.mapToTaskDto(any())).thenReturn(taskDtoUpdate);
+
         Gson gson = new Gson();
         String jsonContent = gson.toJson(taskDtoUpdate);
         //When & Then
