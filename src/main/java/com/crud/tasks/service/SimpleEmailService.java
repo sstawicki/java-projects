@@ -49,7 +49,7 @@ public class SimpleEmailService {
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
             mimeMessageHelper.setTo(mail.getMailTo());
             mimeMessageHelper.setSubject(mail.getSubject());
-            if (mail.getType().equals("SCHEDLUDED")) {
+            if ("SCHEDLUDED".equals(mail.getType())) {
                 mimeMessageHelper.setText(mialCreatorService.buildSchedulerEmail(mail.getMessage()), true);
             } else
                mimeMessageHelper.setText(mialCreatorService.buildTrelloCardEmail(mail.getMessage()), true);

@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmailScheduler {
     private static final String SUBJECT = "Task: Once a day email";
-    private static final String TYPE = "SCHEDLUDED";
+    private static final String TYPE_SCHEDULED = "SCHEDLUDED";
 
     @Autowired
     private SimpleEmailService simpleEmailService;
@@ -28,8 +28,8 @@ public class EmailScheduler {
     @Autowired
     private MialCreatorService mialCreatorService;
 
-    //@Scheduled(cron = "0 0 10 * * *")
-    @Scheduled(fixedDelay = 10000)
+    @Scheduled(cron = "0 0 10 * * *")
+    //@Scheduled(fixedDelay = 10000)
     public void sendInformationEmail() {
         long size = taskRepository.count();
         simpleEmailService.send(new Mail(
@@ -38,7 +38,7 @@ public class EmailScheduler {
                 SUBJECT,
              //   "Currently in database you got: " + size + " " + getTasks(size)));
                 "Currently in database you got: " + size + " " + getTasks(size),
-                TYPE));
+                TYPE_SCHEDULED));
     }
 
     private static String getTasks(long size) {
