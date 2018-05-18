@@ -17,8 +17,11 @@ import javax.mail.internet.MimeMessage;
 
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.anyObject;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SimpleEmailServiceTest {
@@ -29,26 +32,23 @@ public class SimpleEmailServiceTest {
     @Mock
     private JavaMailSender javaMailSender;
 
-    //@Mock
-    //private MialCreatorService mialCreatorService;
 
     @Test
     public void shouldSenEmail(){
         //Given
         Mail mail = new Mail("test@test.com",null, "Test", "test message", "NORMAL");
 
-        MimeMessagePreparator mimeMessage = simpleEmailService.createMimeMessage(mail);
 
-/*
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(mail.getMailTo());
         mailMessage.setSubject(mail.getSubject());
-        mailMessage.setText(mail.getMessage());*/
+        mailMessage.setText(mail.getMessage());
 
         //When
         simpleEmailService.send(mail);
         //Then
-        verify(javaMailSender, times(1)).send(mimeMessage);
+
+        verify(javaMailSender, times(1)).send((MimeMessagePreparator)anyObject());
     }
 
 }
