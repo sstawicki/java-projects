@@ -34,7 +34,8 @@ public class EmailSchedulerTest {
         Mail expected = new Mail("test@test.pl",
                 null,
                 "Tasks: Once a day email",
-                "Currently database you got: 2 tasks");
+                "Currently database you got: 2 tasks",
+                "SCHEDULED");
         when(taskRepository.count()).thenReturn(2L);
         when(adminConfig.getAdminMail()).thenReturn(expected.getMailTo());
         //When
